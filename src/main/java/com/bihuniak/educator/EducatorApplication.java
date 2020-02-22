@@ -22,12 +22,13 @@ public class EducatorApplication {
 
 	@PostConstruct
 	public void init() {
-		//Car car = new Car("A4","Audi",4,2.0,true );
+		Car car = new Car(0, "A4","",4,2.0,false );
 		//Car car1 = new Car("A4","Audi",4,1.5,true );
 		//Car car2 = new Car("A4","Audi",4,2.2,true );
 		//Car car3 = new Car("A4","Audi",4,1.8,true );
-		//myFirstRepository.saveAll(asList(car, car1, car2, car3));
-		Car car = myFirstRepository.findById(4l).get();
-		System.out.println(car.toString());
+		//car.setId(1);
+		myFirstRepository.saveAll(asList(car));
+		//Car car = myFirstRepository.findById(4l).get();
+		//System.out.println(car.toString());
 	}
 }
