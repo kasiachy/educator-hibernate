@@ -14,7 +14,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import javax.annotation.PostConstruct;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import static java.util.Arrays.asList;
 
@@ -43,7 +45,13 @@ public class EducatorApplication {
 		//System.out.println(car.toString());
 
 
-		Human janusz = new Human(0,"Janusz","Tkacz",Sex.SECRET,LocalDate.of(1980,10,22),new Adress("Bezpieczna", "Wrocław","Polska","51-114", new Number("12b","3")));
+		Human janusz = new Human(0,
+				"Janusz",
+				"Tkacz",
+				Sex.SECRET,
+				LocalDate.of(1980, 10, 22),
+				asList(new Adress("Bezpieczna", "Wrocław", "Polska", "51-114"), (new Adress("Radkowska", "Wrocław", "Polska", "50-537"))),
+				asList("512 445 221", "798 112 112", "32 415 22 34"));
 		humanRepository.save(janusz);
 
 
