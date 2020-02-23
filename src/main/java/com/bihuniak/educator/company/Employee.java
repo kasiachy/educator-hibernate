@@ -11,6 +11,8 @@ public class Employee {
     private String name;
     private String position;
 
+    @ManyToOne ()
+    private Department department;
 
     public Employee() {
     }

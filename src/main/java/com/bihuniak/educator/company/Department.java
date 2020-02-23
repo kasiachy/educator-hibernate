@@ -15,8 +15,8 @@ public class Department {
     private String address;
     private int floor;
 
-    @OneToMany (cascade = CascadeType.ALL)
-    @JoinColumn (name = "departmentId")
+    @OneToMany (cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinColumn
     private List<Employee> employee = new ArrayList<>();
 
     public Department() {
@@ -34,6 +34,7 @@ public class Department {
 //        this.employee = employee;
 //    }
 
+
     @Override
     public String toString() {
         return "Department{" +
@@ -41,6 +42,8 @@ public class Department {
                 ", name='" + name + '\'' +
                 ", address='" + address + '\'' +
                 ", floor=" + floor +
+                ", employee=" + employee +
                 '}';
     }
 }
+

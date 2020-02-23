@@ -84,17 +84,18 @@ public class EducatorApplication {
 //		System.out.println(employeeRepository.findById(8l).get());
 
 
-		Employee Ania = new Employee(0, "Anna Nowak", "Lawyer");
-		Employee Basia = new Employee(0, "Barbara Adamczyk", "Receptionist");
-		Employee Janek = new Employee(0, "Jan Kowalski", "Accountant");
-
-		Department finance = new Department(0, "Finance", "Paprotna 30, Wrocław", 5, asList(Ania, Basia, Janek));
-		departmentRepository.save(finance);		departmentRepository.save(finance);
+//		Employee Ania = new Employee(0, "Anna Nowak", "Lawyer");
+//		Employee Basia = new Employee(0, "Barbara Adamczyk", "Receptionist");
+//		Employee Janek = new Employee(0, "Jan Kowalski", "Accountant");
+//
+//		Department finance = new Department(0, "Finance", "Paprotna 30, Wrocław", 5, asList(Ania, Basia, Janek));
+//		departmentRepository.save(finance);		departmentRepository.save(finance);
 
 //		Employee Andrzej = new Employee (0, "Andrzej Kwiatkowski", "Director of Marketing");
 //
 //		Department marketing =new Department(0,"Marketing", "Paprotna 30, Wrocław", 4, asList(Ania, Andrzej)) ;
 //		departmentRepository.save(marketing);
 
+		System.out.println(departmentRepository.findById(5l).get());
 	}
 }
