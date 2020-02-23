@@ -75,15 +75,26 @@ public class EducatorApplication {
 //		dzial.setEmployee(pracownik);
 //		departmentRepository.save(dzial);
 
-
-		System.out.println(departmentRepository.findById(11l).get());
-		System.out.println(departmentRepository.findById(9l).get());
-		// w metodzie toString w encji employee nie może być department, bo będzie się nieksonczenie zapęltać
+//
+//		System.out.println(departmentRepository.findById(11l).get());
+//		System.out.println(departmentRepository.findById(9l).get());
+		// w metodzie toString w encji employee nie może być department, bo będzie się nieskonczenie zapęltać
 		// i odwrotnie kiedy próbujemy wyciągnąć informacje z employee
 
-		System.out.println(employeeRepository.findById(8l).get());
+//		System.out.println(employeeRepository.findById(8l).get());
 
+
+		Employee Ania = new Employee(0, "Anna Nowak", "Lawyer");
+		Employee Basia = new Employee(0, "Barbara Adamczyk", "Receptionist");
+		Employee Janek = new Employee(0, "Jan Kowalski", "Accountant");
+
+		Department finance = new Department(0, "Finance", "Paprotna 30, Wrocław", 5, asList(Ania, Basia, Janek));
+		departmentRepository.save(finance);		departmentRepository.save(finance);
+
+//		Employee Andrzej = new Employee (0, "Andrzej Kwiatkowski", "Director of Marketing");
+//
+//		Department marketing =new Department(0,"Marketing", "Paprotna 30, Wrocław", 4, asList(Ania, Andrzej)) ;
+//		departmentRepository.save(marketing);
 
 	}
-
 }

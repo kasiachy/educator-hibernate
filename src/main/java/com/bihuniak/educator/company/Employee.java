@@ -11,17 +11,15 @@ public class Employee {
     private String name;
     private String position;
 
-    @OneToOne (cascade = CascadeType.ALL)
-    private Department department;
 
     public Employee() {
     }
 
-    public Employee(long id, String name, String position, Department department) {
+    public Employee(long id, String name, String position) {
         this.id =id;
         this.name = name;
         this.position = position;
-        this.department = department;
+
     }
 
     @Override
@@ -30,7 +28,6 @@ public class Employee {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", position='" + position + '\'' +
-                ", department=" + department +
                 '}';
     }
 }

@@ -1,6 +1,9 @@
 package com.bihuniak.educator.company;
 
+
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Department {
@@ -12,22 +15,24 @@ public class Department {
     private String address;
     private int floor;
 
-    @OneToOne (cascade = CascadeType.ALL)
-    private Employee employee;
+    @OneToMany (cascade = CascadeType.ALL)
+    @JoinColumn (name = "departmentId")
+    private List<Employee> employee = new ArrayList<>();
 
     public Department() {
     }
 
-    public Department(long id, String name, String address, int floor) {
+    public Department(long id, String name, String address, int floor, List<Employee> employee) {
         this.id = id;
         this.name = name;
         this.address = address;
         this.floor = floor;
-    }
-
-    public void setEmployee(Employee employee) {
         this.employee = employee;
     }
+
+//    public void setEmployee(Employee employee) {
+//        this.employee = employee;
+//    }
 
     @Override
     public String toString() {
